@@ -7,7 +7,7 @@ export const metadata: Metadata = {
   applicationName: "Bharix AI",
   icons: { icon: "/logo.svg" },
 };
-export const viewport: Viewport = { themeColor: "#f6f3ff", width: "device-width", initialScale: 1 };
+export const viewport: Viewport = { themeColor: "#edf5ff", width: "device-width", initialScale: 1 };
 
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
   return <html lang="en"><body>{children}</body></html>;
