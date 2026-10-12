@@ -41,3 +41,52 @@
 .beemax-signed-in>b{font-size:16px;color:var(--text)}
 .beemax-signed-in>small{overflow-wrap:anywhere;text-align:center;color:var(--muted);font-size:12px}
 .beemax-signed-in .signed-in-account{display:flex;align-items:center;justify-content:center;gap:8px;border:1px solid var(--line);border-radius:22px;padding:10px 15px;color:var(--text);background:var(--surface)}
+
+
+/* Reference-matched Beemax-style companion screen */
+.app-shell{--bg:#dcecff;--surface:#f8fbff;--surface2:#cfe3ff;--text:#17253a;--muted:#52647a;--line:#b9d2f0;background:radial-gradient(ellipse at 50% 32%,#f8fbff 0%,#e4f0ff 48%,#c9e0ff 100%)}
+.app-shell.dark{--bg:#0b1930;--surface:#132844;--surface2:#1e3b5f;--text:#eff7ff;--muted:#b1c6df;--line:#355779;background:#0b1930}
+.welcome.beemax-welcome{max-width:500px;padding:18px 28px 12px}
+.beemax-welcome .eyebrow{display:none}
+.beemax-welcome .hero-orb{width:184px;height:184px;margin:8px auto 8px;filter:drop-shadow(0 12px 20px #6c9ec42a)}
+.beemax-welcome .robot-head{width:104px;height:80px;top:32px;border-radius:28px;background:linear-gradient(145deg,#fff,#e4edf6)}
+.beemax-welcome .robot-body{top:101px;width:75px;height:57px}
+.beemax-welcome .robot-arm{top:108px}
+.beemax-welcome h1{font-size:clamp(25px,3.4vw,32px);font-weight:650;letter-spacing:-.7px}
+.beemax-welcome>p.beemax-subtitle{font-size:18px;line-height:1.4;color:#263b54;margin:4px 0 26px}
+.app-shell.dark .beemax-welcome>p.beemax-subtitle{color:var(--muted)}
+.beemax-welcome .suggestions{gap:9px}
+.beemax-welcome .suggestion{min-height:76px;padding:13px 14px;gap:10px;border:1px solid #d8e7f9;border-radius:12px;background:#d3e6ffb8;box-shadow:none}
+.beemax-welcome .suggestion:hover{transform:translateY(-1px);border-color:#91bde9}
+.beemax-welcome .suggestion>span:first-child{width:27px;height:27px;flex:0 0 27px;background:transparent;color:#172f4a;border-radius:50%;font-size:20px}
+.beemax-welcome .suggestion b{font-size:12px;font-weight:550;color:#182a40}
+.beemax-welcome .suggestion small{display:none}
+.beemax-welcome .suggest-arrow{display:none}
+.welcome-composer{width:min(500px,100%);padding:0 22px 15px}
+.welcome-composer .composer{display:flex;align-items:center;gap:7px;padding:4px 6px 4px 13px;border:1.5px solid #7e9dbb;border-radius:28px;background:#d7eaffc9;box-shadow:none}
+.welcome-composer .composer textarea{min-height:31px;max-height:70px;padding:6px 2px 4px;font-size:12px;color:#1b2d44}
+.welcome-composer .composer textarea::placeholder{color:#344d68}
+.welcome-composer .composer-bottom{flex:0 0 auto}
+.welcome-composer .composer-tools button{padding:5px;color:#203b57}
+.welcome-composer .composer-tools button span,.welcome-composer .composer-tools button:not(:first-of-type),.welcome-composer .model-label,.welcome-composer .disclaimer{display:none}
+.welcome-composer .send-side{gap:0}
+.welcome-composer .send-btn{width:39px;height:39px;border-radius:50%;background:#07394e;box-shadow:none}
+.welcome-composer .send-btn:disabled{opacity:1;background:#07394e;color:#fff}
+@media(max-width:650px){
+ .welcome.beemax-welcome{padding:8px 18px 10px}
+ .beemax-welcome .hero-orb{width:158px;height:158px;margin:4px auto 7px;transform:none}
+ .beemax-welcome .robot-head{transform:scale(.88);transform-origin:top center}
+ .beemax-welcome .robot-body{transform:scale(.88);transform-origin:top center}
+ .beemax-welcome .robot-arm{transform:scale(.88)}
+ .beemax-welcome .robot-arm-left{transform:rotate(20deg) scale(.88)}
+ .beemax-welcome .robot-arm-right{transform:rotate(-20deg) scale(.88)}
+ .beemax-welcome h1{font-size:25px}
+ .beemax-welcome>p.beemax-subtitle{font-size:16px;margin:3px 0 22px}
+ .beemax-welcome .suggestions{gap:8px}
+ .beemax-welcome .suggestion{min-height:70px;padding:10px 9px;gap:5px;border-radius:10px}
+ .beemax-welcome .suggestion>span:first-child{width:24px;height:24px;flex-basis:24px;font-size:17px}
+ .beemax-welcome .suggestion b{font-size:11px}
+ .welcome-composer{padding:0 15px calc(12px + env(safe-area-inset-bottom))}
+ .welcome-composer .composer{padding:3px 5px 3px 12px}
+ .welcome-composer .composer textarea{font-size:12px}
+}
