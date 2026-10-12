@@ -101,7 +101,7 @@ export default function Home() {
 
   const addFiles = async (list:FileList|null) => {
     if(!list)return;
-    const accepted=[];
+    const accepted: { name: string; text?: string; image?: string }[] = [];
     for(const file of Array.from(list)){
       if(file.size>8*1024*1024){notify(`${file.name} is over 8 MB`);continue;}
       if(file.type.startsWith("image/")){const data=await new Promise<string>((resolve,reject)=>{const r=new FileReader();r.onload=()=>resolve(String(r.result));r.onerror=reject;r.readAsDataURL(file)});accepted.push({name:file.name,image:data});}
