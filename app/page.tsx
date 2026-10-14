@@ -137,7 +137,7 @@ export default function Home() {
 
   return <main className="app-shell">
     <aside className={`sidebar ${sidebarOpen?"sidebar-open":""}`}>
-      <div className="brand"><div className="brand-mark"><span>B</span><i/></div><div><strong>Bharix<span> AI</span></strong><small>Think beyond.</small></div><button className="icon-btn mobile-close" onClick={()=>setSidebarOpen(false)} aria-label="Close menu"><X size={18}/></button></div>
+      <div className="brand"><div className="brand-wordmark"><strong>Bharix <span>AI</span></strong></div><button className="icon-btn mobile-close" onClick={()=>setSidebarOpen(false)} aria-label="Close menu"><X size={18}/></button></div>
       <button className="new-chat" onClick={newChat}><Plus size={18}/> New chat <span>⌘ K</span></button>
       <label className="searchbox"><Search size={16}/><input placeholder="Search conversations" value={search} onChange={e=>setSearch(e.target.value)}/></label>
       <div className="side-label">YOUR WORKSPACE</div>
@@ -158,7 +158,7 @@ export default function Home() {
       <div className={`composer-wrap ${!active?.messages.length?"welcome-composer":""}`}>
         {error&&<div className="error-banner"><CircleHelp size={16}/>{error}<button onClick={()=>setError("")}><X size={14}/></button></div>}
         {files.length>0&&<div className="file-chips">{files.map((f,i)=><span key={i}><FileText size={14}/>{f.name}<button onClick={()=>setFiles(p=>p.filter((_,j)=>j!==i))}><X size={12}/></button></span>)}</div>}
-        <div className="composer"><textarea ref={inputRef} rows={1} value={input} onChange={e=>setInput(e.target.value)} onKeyDown={e=>{if(e.key==="Enter"&&!e.shiftKey){e.preventDefault();send()}}} placeholder={active?.messages.length ? "Ask Bharix anything…" : "Type here…"}/>
+        <div className="composer"><textarea ref={inputRef} rows={1} value={input} onChange={e=>setInput(e.target.value)} onKeyDown={e=>{if(e.key==="Enter"&&!e.shiftKey){e.preventDefault();send()}}} placeholder="Message Bharix..."/>
           <div className="composer-bottom"><div className="composer-tools"><input ref={fileRef} type="file" multiple accept="image/*,.txt,.md,.csv,.json,.html,.xml,.js,.ts,.py,.css" hidden onChange={e=>addFiles(e.target.files)}/><button title="Attach files" onClick={()=>fileRef.current?.click()}><Paperclip size={17}/><span>Attach</span></button><button className={webSearch?"tool-active":""} title="Web search" onClick={()=>setWebSearch(!webSearch)}><Globe size={16}/><span>Search {webSearch?"on":""}</span></button><button title="Voice input" onClick={startVoice} disabled={!speechAvailable}><Mic size={17}/><span>Voice</span></button></div><div className="send-side"><span className="model-label"><Zap size={12}/> AI assistant <ChevronDown size={12}/></span>{busy?<button className="send-btn stop-btn" onClick={()=>abortRef.current?.abort()} aria-label="Stop generation"><Square size={15}/></button>:<button className="send-btn" onClick={()=>send()} disabled={!input.trim()&&!files.length} aria-label="Send message">{active?.messages.length?<ArrowUp size={19}/>:<Send size={17}/>}</button>}</div></div>
         </div><div className="disclaimer">Bharix AI can make mistakes. Check important information. <span>Made with care ✦</span></div>
       </div>
